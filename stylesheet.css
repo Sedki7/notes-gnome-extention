@@ -1,0 +1,39 @@
+.desktop-clock {
+background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 20px;
+        
+ 
+
+}
+.desktop-clock:hover{
+background-color: rgba(0, 0, 0, 0.795);
+}
+
+.clock-label {
+    font-size: 18px;
+    color: white;
+    padding: 10px;
+
+}
+
+.title{
+    font-size: 32px;
+    padding-top: 10px;
+}
+
+.br{
+    background-color: gray;
+
+}
+
+.sideButton{
+    background-color: rgba(104, 101, 101, 0.678);
+    border-radius: 20px;
+    transition:all;
+    animation-duration: 300ms;
+}
+
+.sideButton:hover{
+        background-color: rgba(104, 101, 101, 0.863);
+
+}

@@ -1,0 +1,7 @@
+{
+    "uuid": "desktop-clock@sedki",
+    "name": "Desktop Clock",
+    "description": "A desktop clock widget",
+    "version": 1,
+    "shell-version": ["46"]
+}

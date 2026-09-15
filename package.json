@@ -1,0 +1,22 @@
+{
+  "name": "desktop-clock@sedki",
+  "private": true,
+  "devDependencies": {
+    "@girs/gjs": "^5.0.0",
+    "@girs/gnome-shell": "^50.0.4",
+    "@types/bun": "latest",
+    "@types/node": "^26.5.1",
+    "esbuild": "^0.28.2"
+  },
+  "scripts": {
+    "build": "bun build.js",
+    "typecheck": "tsc",
+    "dev": "bun run typecheck && bun run build"
+  },
+  "peerDependencies": {
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2"
+  }
+}
