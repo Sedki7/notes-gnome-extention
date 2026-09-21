@@ -147,6 +147,8 @@ export default class DesktopClock {
             reactive: true,
             width: 320,
             height: 220,
+            visible: false,
+            opacity: 0,
         });
 
         this.mainWidget.add_child(this.headerBox);
@@ -161,8 +163,6 @@ export default class DesktopClock {
             reactive: true,
             height: 100,
             width: 20,
-            visible: false,
-            opacity: 0,
         });
 
         this.mainWidget.set_pivot_point(0.5, 0.5);
@@ -180,7 +180,6 @@ export default class DesktopClock {
             affectsInputRegion: true,
             trackFullscreen: false,
         });
-
         Main.layoutManager.addChrome(this.sideButton, {
             affectsInputRegion: true,
             trackFullscreen: false,
@@ -241,15 +240,18 @@ export default class DesktopClock {
         };
 
         // Capture ESC Key Press to Collapse
-        (this.mainWidget as any).connect("captured-event", (actor: any, event: any) => {
-            if (event.type() === Clutter.EventType.KEY_PRESS) {
-                if (event.get_key_symbol() === Clutter.KEY_Escape) {
-                    collapse();
-                    return Clutter.EVENT_STOP;
+        (this.mainWidget as any).connect(
+            "captured-event",
+            (actor: any, event: any) => {
+                if (event.type() === Clutter.EventType.KEY_PRESS) {
+                    if (event.get_key_symbol() === Clutter.KEY_Escape) {
+                        collapse();
+                        return Clutter.EVENT_STOP;
+                    }
                 }
-            }
-            return Clutter.EVENT_PROPAGATE;
-        });
+                return Clutter.EVENT_PROPAGATE;
+            },
+        );
 
         (this.collapseButton as any).connect("clicked", collapse);
         (this.sideButton as any).connect("button-press-event", expand);
